@@ -20,7 +20,6 @@ warnings.filterwarnings("ignore")
 class InstructLabourPolicyBot(ChatbotBase):
     def __init__(self, name="LabourPolicyBot", device='cpu'):
         ChatbotBase.__init__(self,name)
-        # Use either a cpu or gpu -- for now it's best to keep this as 'cpu' 
         self.device = device
 
         # Hyperparameters for text generation
@@ -36,7 +35,7 @@ class InstructLabourPolicyBot(ChatbotBase):
         self.manifesto_df = pandas.read_csv('manifesto_info.csv')
         self.manifesto_topics = {row["Label"]: row["Answer"] for _, row in self.manifesto_df.iterrows()}
                 
-        # Checkpoint for our LLM
+        # Checkpoint for LLM
         checkpoint = "HuggingFaceTB/SmolLM-135M-Instruct"
 
         # Load tokenizer and model
@@ -118,7 +117,6 @@ if __name__ == "__main__":
 
     #Initialise first user input
     response = input("You: ")
-    #print(llm_chatbot.classify_intent(response))
 
     while llm_chatbot.conversation_is_active:
         # Check for farewell phrases before processing further

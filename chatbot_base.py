@@ -1,11 +1,3 @@
-"""
-Base Chatbot class
-Create a new file for your chatbot that inherits from this class
-To do this you need to include the following line at the top of your new file:
-
-from chatbot_base import ChatbotBase
-"""
-
 class ChatbotBase:
     # Constructor 
     def __init__(self, name="Chatbot"):
